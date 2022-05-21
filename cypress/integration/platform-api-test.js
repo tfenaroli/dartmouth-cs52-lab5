@@ -66,7 +66,7 @@ describe('Authentication - ok to fail if you are on lab5', () => {
     }).then((response) => {
       expect(response.status).to.eq(200);
       expect(response.body.author).to.not.eq(undefined);
-      postId = response.body.id;
+      postId = response.body.id ?? response.body._id;
     });
   });
   it('user deletes post with auth token', () => {
@@ -105,7 +105,7 @@ describe('Lab5: CRUD operations', () => {
       },
     }).then((response) => {
       expect(response.status).to.eq(200);
-      postId = response.body.id;
+      postId = response.body.id ?? response.body._id;
     });
   });
   it('user retrieves a post', () => {
