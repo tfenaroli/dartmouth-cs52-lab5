@@ -4,7 +4,7 @@ export async function createPost(postFields) {
   const post = new Post();
 
   post.title = postFields.title;
-  post.tags = postFields.title;
+  post.tags = postFields.tags;
   post.content = postFields.content;
   post.coverUrl = postFields.coverUrl;
 
