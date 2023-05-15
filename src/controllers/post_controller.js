@@ -18,7 +18,7 @@ export async function createPost(postFields) {
 
 export async function getPosts() {
   try {
-    const posts = await Post.find();
+    const posts = await Post.find().sort({ createdAt: -1 });
     return posts.map((el) => {
       return {
         id: el.id,
